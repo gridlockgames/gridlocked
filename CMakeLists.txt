@@ -30,7 +30,7 @@ include_directories(include)
 
 set(GRIDLOCKED_SRC
     src/main.cpp
-)
+        )
 
 add_executable(gridlocked ${GRIDLOCKED_SRC})
 target_link_libraries(gridlocked

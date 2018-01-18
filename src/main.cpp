@@ -10,7 +10,9 @@ int main()
 
   ImGui::SFML::Init(window);
 
-  sf::CircleShape shape(100.f);
+  float size  = 100.f;
+  int   edges = 6u;
+  sf::CircleShape shape(size, edges);
   shape.setFillColor(sf::Color::Green);
 
   sf::Clock deltaClock;
@@ -27,9 +29,13 @@ int main()
 
     ImGui::SFML::Update(window, deltaClock.restart());
 
-    ImGui::Begin("Hello, world!");
-    ImGui::Button("Look at this pretty button");
+    ImGui::Begin("Select polygon size and number of edges!");
+    ImGui::SliderFloat("Size", &size, 0.f, 100.f);
+    ImGui::SliderInt("Edges", &edges, 3, 10);
     ImGui::End();
+
+    shape.setRadius(size);
+    shape.setPointCount(edges);
 
     window.clear();
     window.draw(shape);
