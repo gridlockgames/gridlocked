@@ -8,6 +8,7 @@
 1. [SFML 2.4.2](https://github.com/SFML/SFML/tree/2.4.2)
   - Clone repo from tag `2.4.2`
   - Compile and install using `cmake`
+    - Use flag `BUILD_SHARED_LIBS=FALSE`
   - Copy contents of `SFML/cmake/Modules` to `<CMake installation dir>/share/cmake-<ver>/Modules`
 2. [imgui 1.5.3](https://github.com/ocornut/imgui/tree/v1.53)
 
