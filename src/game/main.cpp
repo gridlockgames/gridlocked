@@ -2,6 +2,7 @@
 #include <imgui/imgui-SFML.h>
 
 #include <SFML/Graphics.hpp>
+#include <debug-tools/dt.hpp>
 
 int main()
 {
@@ -9,6 +10,7 @@ int main()
   window.setFramerateLimit(60u);
 
   ImGui::SFML::Init(window);
+  dt::debugTools debug_tools;
 
   float size  = 100.f;
   int   edges = 6u;
@@ -39,6 +41,8 @@ int main()
 
     window.clear();
     window.draw(shape);
+
+    debug_tools.draw();
     ImGui::SFML::Render(window);
     window.display();
   }

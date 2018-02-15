@@ -15,3 +15,8 @@ target_link_libraries(imgui-sfml
     ${SFML_LIBRARIES}
     ${SFML_DEPENDENCIES}
 )
+
+if (UNIX)
+    target_link_libraries(imgui-sfml GL)
+endif()
+

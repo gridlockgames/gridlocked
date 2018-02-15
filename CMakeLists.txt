@@ -9,8 +9,10 @@ set(CMAKE_MODULE_PATH "${CMAKE_HOME_DIRECTORY}/cmake/Modules" ${CMAKE_MODULE_PAT
 include_directories(./include)
 
 # SFML
-set(SFML_ROOT "C:/Program Files (x86)/SFML")
-set(SFML_USE_STATIC_STD_LIBS TRUE)
-set(SFML_STATIC_LIBRARIES TRUE)
+if (WINDOWS)
+    set(SFML_ROOT "C:/Program Files (x86)/SFML")
+    set(SFML_USE_STATIC_STD_LIBS TRUE)
+    set(SFML_STATIC_LIBRARIES TRUE)
+endif()
 
 add_subdirectory(src)
